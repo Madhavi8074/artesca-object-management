@@ -23,3 +23,4 @@ ENV HOST=0.0.0.0 \
 
 # Run database setup/migrations and start FastAPI server
 CMD ["sh", "-c", "python init_db.py && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+

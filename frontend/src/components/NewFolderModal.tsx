@@ -91,3 +91,4 @@ export const NewFolderModal: React.FC<NewFolderModalProps> = ({
     </div>
   )
 }
+
