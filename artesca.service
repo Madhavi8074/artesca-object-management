@@ -1,0 +1,21 @@
+[Unit]
+Description=Scality ARTESCA Object Management Production Service
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=madhavi
+Group=madhavi
+WorkingDirectory=/home/madhavi/projects/artesca-object-management/backend
+EnvironmentFile=/home/madhavi/projects/artesca-object-management/backend/.env
+ExecStartPre=/home/madhavi/projects/artesca-object-management/backend/.venv/bin/alembic upgrade head
+ExecStart=/home/madhavi/projects/artesca-object-management/backend/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

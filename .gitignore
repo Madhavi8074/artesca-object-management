@@ -1,0 +1,33 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pid
+*.log
+
+# Python
+venv/
+.venv/
+backend/venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+*.db
+
+# Node.js & Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+.npm/
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+
+# Large binaries & archives
+*.tar.gz
+*.zip
+weed
